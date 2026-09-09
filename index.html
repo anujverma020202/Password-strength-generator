@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f0e8">
+  <title>Vaultline | Password Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="brand"><span class="brand-mark">V</span> VAULTLINE</div>
+      <div class="status"><span class="status-dot"></span> Local &amp; private</div>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">Secure &amp; private</p>
+      <h1>Password<br>generator.</h1>
+    </section>
+
+    <section class="workspace" aria-label="Password generator">
+      <div class="generator">
+        <div class="password-wrap">
+          <span class="password-label">Password</span>
+          <output class="password" id="password" aria-live="polite">Loading...</output>
+          <button class="copy-button" id="copyButton" type="button" aria-label="Copy password" title="Copy password">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="11" height="11" rx="1"></rect><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"></path></svg>
+          </button>
+        </div>
+
+        <div class="meter-row"><span class="meter-title">Strength</span><span class="strength-text" id="strengthText">Excellent</span></div>
+        <div class="meter" id="meter" aria-label="Password strength"><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="controls">
+          <div class="control-heading"><label for="length">Password length</label><span class="length-value" id="lengthValue">20</span></div>
+          <input id="length" type="range" min="8" max="40" value="20">
+          <div class="checks">
+            <label class="check"><input type="checkbox" id="uppercase" checked> Uppercase letters</label>
+            <label class="check"><input type="checkbox" id="lowercase" checked> Lowercase letters</label>
+            <label class="check"><input type="checkbox" id="numbers" checked> Numbers</label>
+            <label class="check"><input type="checkbox" id="symbols" checked> Symbols</label>
+          </div>
+          <button class="generate" id="generateButton" type="button">
+            Generate
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11a8.1 8.1 0 0 0-15.5-2M4 5v4h4M4 13a8.1 8.1 0 0 0 15.5 2M20 19v-4h-4"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <aside class="side">
+        <div class="side-panel">
+          <h2>Strong passwords</h2>
+          <div class="rule"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"></path></svg><span>Longer is better. Aim for 16 characters or more.</span></div>
+          <div class="rule"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"></path></svg><span>Mix letters, numbers, and symbols together.</span></div>
+          <div class="rule"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"></path></svg><span>Never reuse a password across accounts.</span></div>
+        </div>
+        <div class="side-panel tip">
+          <h2>Use a manager</h2>
+          <p>Use a password manager to store unique passwords.</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer><span>Vaultline</span><span id="entropy">Estimated entropy: 131 bits</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status">Password copied</div>
+  <script src="script.js"></script>
+</body>
+</html>
