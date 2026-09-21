@@ -16,7 +16,7 @@
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 321px;
   color: var(--ink);
   background: var(--paper);
   font-family: 'Space Grotesk', sans-serif;
